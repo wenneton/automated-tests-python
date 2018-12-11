@@ -1,6 +1,5 @@
 from unittest import TestCase
 from blog import Blog
-from post import Post
 
 class BlogTest(TestCase):
     def test_create_blog(self):
@@ -27,13 +26,22 @@ class BlogTest(TestCase):
         self.assertEqual(b2.__repr__(), 'My Blog by Kinhos (2 posts)')
 
 
-    def test_create_post(self):
+    def test_json(self):
         b = Blog('Test', 'Test Author')
         b.create_post('Test Post', 'Test Content')
 
-        self.assertEqual([Post('Test Post', 'Test Content')], b.posts)
+        expected_dict = {
+            'title': 'Test',
+            'author': 'Test Author',
+            'posts': [{
+                'title': 'Test Post',
+                'content': 'Test Content',
+            }],
+        }
 
-    def test_json(self):
+        self.assertDictEqual(expected_dict, b.json())
+
+    def test_json_no_posts(self):
         b = Blog('Test', 'Test Author')
 
         expected_dict = {

@@ -19,5 +19,5 @@ class Blog:
         return {
             'title': self.title,
             'author': self.author,
-            'posts': self.posts,
+            'posts': [post.json() for post in self.posts],
         }
