@@ -1,0 +1,18 @@
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual environment
+section3/venv/
+
+#caches
+section3/blog/__pycache__/
+
+#xml and iml files from pycharm
+*.xml
+*.iml
