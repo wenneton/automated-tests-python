@@ -1,3 +1,5 @@
+MENU_PROMPT = 'Enter c to create a blog,l to list blogs, r to read one, p to create post, or q to quit: '
+
 blogs = dict() #blog_name : Blog object
 
 def menu():
@@ -7,6 +9,7 @@ def menu():
     # Eventually exit
 
     print_blogs()
+    selection = input(MENU_PROMPT)
 
 
 def print_blogs():
