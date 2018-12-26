@@ -9,9 +9,11 @@
 
 # virtual environment
 section3/venv/
+section 4/venv/
 
 #caches
 section3/blog/__pycache__/
+section 4/blog/__pycache__/
 
 #xml and iml files from pycharm
 *.xml
